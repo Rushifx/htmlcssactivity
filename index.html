@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Portfolio Page: Your name here</title>
+<title>Portfolio Page: Colin</title>
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 
@@ -27,13 +27,15 @@
     /* ******************************* */
 
     /* set the header styles */
-    .header{
+    header{
         display: flex;
         justify-content: space-between;
         align-items: center;
         padding: 20px 20px 70px 70px;  /*top , right, bottom, left*/
         width: 80%;
         margin: auto;
+        border-bottom: 1px dashed rgb(0, 255, 255, 0.5);
+        margin-bottom: 10px;
     }
 
     /* set the logo styles */
@@ -133,8 +135,9 @@
     }
 
     /* set the profile text (targets span tags within <p> tags in profilecontainer class) */
-    .strong {
+    .profilecontainer strong {
         font-weight: bold;
+        color: red;
     }
 
     /* set the profile details' list */
@@ -200,11 +203,102 @@
 
     /* Start of styling projectsection */
     /* ******************************* */
+    /* start of styling projectsection */
+    #projectsection
+    {
+        width: 80%;
+        margin: auto;
+        height: 100dvh;
+    }
+    /* set the showcasecontainer to list the projects, repeated in equal columns of 3s per fractional unit */
+    .showcasecontainer
+    {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+    }
+    /* set the card background to white and change font size along with setting borders for both bottom left and right */
+    .projectcard
+    {
+        font-size: small;
+        background-color: white;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        padding-bottom: 24px;
+    }
+    /* set the projectsction grid container's content with a left padding */
+    .projectcard h4, .projectcard p
+    {
+        padding-left: 1em;
+    }
+    /* sets image size in the project card */
+    .projectcard img
+    {
+        display: block;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        margin-bottom: 10px;
+        width: 100%;
+        height: 180px;
+        background-size: cover;
+        background-position-x: center;
+        background-position-y: center;
+        background-repeat: no-repeat;
+        background-image: url(img/imgplaceholder.png);
+        /* text-indent: -9999px; remove or comment out text indent if all images are available */
+    }
+    .projectcard .scope
+    {
+        text-transform: uppercase;
+        padding-top: 8px;
+        padding-bottom: 8px;
+    }
 
-        /* Include the styles for projectsection here */
+    .projectcard:hover
+    {
+        transition: 0.45s ease-out;
+        transform: scale(1.05);
+    }
 
+    .projectcard a
+    {
+        text-decoration: none;
+        color: gray;
+        transform: scale(1.0);
+    }
+
+    .projectcard span
+    {
+        display: inline;
+        font-size: x-small;
+        align-content: space-between;
+        border-radius: 6px;
+        margin-right: 4px;
+        background-color: lightseagreen;
+        padding: 5px 10px;
+        color: white;
+        white-space: nowrap;
+    }
     /* ***************************** */
     /* End of styling projectsection */
+    /* Start of styling miscellaneous elements */
+    /* *************************************** */
+
+    .top{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .top a{
+        margin-top: 20px;
+        text-decoration: none;
+        color: lightseagreen;
+        font-size: small;
+    }
+
+    /* ************************************* */
+    /* End of styling miscellaneous elements */
 
 </style>
 </head>
@@ -212,13 +306,169 @@
 
     <!-- Set up your page structure here -->
 
+    <!-- Start of header -->
+    <a name="top"><!-- anchor tag for bookmarking --></a>
+    <header>
+        <div class="logo"><!-- image of logo --></div>
+        <nav>
+            <ul>
+                <li><a href="#top">Home</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Let's Talk</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- End of header -->
+
+    <!-- Start of mainsection -->
+     <section id="mainsection">
+        <div class="left-div">
+            <div class="profilecontainer">
+                <img src="img/alex.png" alt="alex" class="rounded-image">
+                <p>
+                    <strong>&lt;Colin&gt;</strong>
+                    <span>Full-stack Developer | 3D Artist</span>
+                </p>
+            </div>
+            <div class="profiledetails">
+                <strong class="subheader">Codes in:</strong>
+                <ul>
+                    <li>HTML . CSS . JavaScript</li>
+                    <li>Java</li>
+                    <li>SQL</li>
+                </ul>
+                <strong class = "subheader">Works with:</strong>
+                <ul>
+                    <li>React</li>
+                    <li>Springboot</li>
+                    <li>jUnit + Mockito (Unit Tests)</li>
+                </ul>
+                <strong class="subheader">Builds using:</strong>
+                <ul>
+                    <li>GitHub</li>
+                    <li>IntelliJ IDEA</li>
+                    <li>MySQL WorkBench</li>
+                    <li>Visual Studio Code</li>
+                </ul>
+            </div>
+        </div>
+        <div id="right-div">
+            <div class="text">
+                <h1>Hi! <span class="typing"></span></h1>
+                <p>Good day, visitor. Use this starter template as your start your portfolio development journey.</p>
+                <div class="linkcontainer">
+                    <a href="#projects">View projects below.</a>
+                </div>
+            </div>
+        </div>
+     </section>
+
+    <!-- End of mainsection -->
+
+    <!-- Start of project section, uses grids -->
+
+    <a name="projects"><!-- bookmark for projects --></a>
+    <section id="projectsection">
+
+        <div class="sectiontitle">Projects</div>
+        <div class="showcasecontainer">
+
+            <!-- Project Cards go here -->
+            <!-- Project card #1 -->
+             <div class="projectcard">
+                <a href="#">
+                    <img src="img/web-design.jpg" alt="web design">
+                    <!-- webpage -->
+                     <h4>Community Web Portal Design</h4>
+                    <p class="scope">Web Page Design</p>
+                    <p>
+                        <span>UI/UX</span>
+                        <span>HTML</span>
+                        <span>CSS</span>
+                    </p>
+                </a>
+             </div>
+            <!-- Project card #2 -->
+             <div class="projectcard">
+                <a href="#">
+                    <img src="img/mobile-app.jpg" alt="mobile app">
+                    <!-- mobile app -->
+                     <h4>Expense Calculator Web App</h4>
+                    <p class="scope">JavaScript development</p>
+                    <p>
+                        <span>User Interaction</span>
+                        <span>Application Logic</span>
+                    </p>
+                </a>
+             </div>
+            <!-- Project card #3 -->
+             <div class="projectcard">
+                <a href="#">
+                    <img src="img/data-tracking.jpg" alt="data tracking">
+                    <!-- database -->
+                     <h4>Enrollment Tracker</h4>
+                    <p class="scope">Database Design</p>
+                    <p>
+                        <span>SQL</span>
+                        <span>Data Analysis</span>
+                    </p>
+                </a>
+             </div>
+            <!-- Project card #4 -->
+             <div class="projectcard">
+                <a href="#">
+                    <img src="img/chess.jpg" alt="chess game">
+                    <!-- webpage -->
+                     <h4>Chess Game</h4>
+                    <p class="scope">Java</p>
+                    <p>
+                        <span>Game Development</span>
+                    </p>
+                </a>
+             </div>
+            <!-- Project card #5 -->
+             <div class="projectcard">
+                <a href="#">
+                    <img src="img/fitness-tracking.jpg" alt="fitness tracker">
+                    <!-- fitness tracking -->
+                     <h4>Fitness Tracker</h4>
+                    <p class="scope">App Development</p>
+                    <p>
+                        <span>Swift Programming</span>
+                        <span>SwiftUI</span>
+                    </p>
+                </a>
+             </div>
+            <!-- Project card #6 -->
+             <div class="projectcard">
+                <a href="#">
+                    <img src="img/photography.jpg" alt="photography">
+                    <!-- webpage -->
+                     <h4>SG Arts Award</h4>
+                    <p class="scope">Photography</p>
+                    <p>
+                        <span>Creative</span>
+                        <span>Competition</span>
+                    </p>
+                </a>
+             </div>
+        </div>
+
+        <div class="top">
+            <a href="#top">&#x25B2; Back to Top</a>
+        </div>
+        
+    </section>
+
+    <!-- End of project section -->
+
 
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
     <script>
         
 
     var options = {
-        strings: ['I&apos;m &lt;Your Name Here!&gt;', 'Thanks for visiting!'],
+        strings: ['I&apos;m &lt;Colin!&gt;', 'Thanks for visiting!'],
         typeSpeed: 100,
         backSpeed:100,
         loop: false
